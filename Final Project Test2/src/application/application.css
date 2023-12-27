@@ -20,11 +20,30 @@
 	-fx-color: white;
 }
 
+#lblHabit {
+	-fx-font-family: "Black Han Sans";
+	-fx-color: white;
+}
+
 #backgroundPane {
 	-fx-background-color: linear-gradient(#455D8D, #0B0E1E);
+}
+
+#habitsPane1 {
+	-fx-background-color: linear-gradient(#0D0D24, #222743, #0D0D24);
+}
+#habitsPane2 {
+	-fx-background-color: linear-gradient(#323367, #32345A);
 }
 
 #AchievementRectangle {
 	-fx-fill: linear-gradient(#202D4E, #12192E);
 	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);
+}
+
+#btnSwitchToMain {
+	-fx-background-color: rgba(0,0,0,0);
+}
+.button {
+	-fx-font-family: "Bruno Ace";
 }
