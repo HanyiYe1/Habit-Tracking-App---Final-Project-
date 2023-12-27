@@ -25,6 +25,10 @@ public class Controller implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		clipSpaceImage();
+	}
+	
+	public void clipSpaceImage() {
 		// set a clip to apply rounded border to the original image.
         Rectangle clip = new Rectangle(
         	imgSpace.getFitWidth(), imgSpace.getFitHeight()
