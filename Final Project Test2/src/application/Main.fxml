@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="backgroundPane" prefHeight="565.0" prefWidth="1032.0" style="-fx-background-color: linear-gradient(#455D8D, #0B0E1E);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Rectangle arcHeight="50.0" arcWidth="25.0" fill="#151f3a" height="27.0" layoutX="907.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="78.0" />
+      <Rectangle fx:id="welcomeUserRectangle" arcHeight="50.0" arcWidth="25.0" fill="#5477bb" height="27.0" layoutX="23.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="203.0" />
+      <Label fx:id="lblConsole" layoutX="34.0" layoutY="26.0" prefHeight="14.0" prefWidth="163.0" style="-fx-font-family: &quot;Bruno Ace&quot;;" text="Welcome User" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHome" layoutX="306.0" layoutY="21.0" text="Habit Mastery Zone" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="306.0" layoutY="52.0" prefWidth="246.0" style="-fx-background-color: white; -fx-pref-height: 2;" />
+      <Rectangle fx:id="habitMasteryZoneRectangle" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="359.0" layoutX="306.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: #3E4B75; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0, 8, 8);" width="234.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#465481" height="242.0" layoutX="306.0" layoutY="189.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="234.0" />
+      <Label fx:id="lblHome" layoutX="318.0" layoutY="84.0" text="Streaks:" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHome" layoutX="589.0" layoutY="20.0" text="Galactic Milestones:" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="589.0" layoutY="52.0" prefWidth="396.0" style="-fx-background-color: white; -fx-pref-height: 2;" />
+      <Label fx:id="lblConsole" layoutX="920.0" layoutY="24.0" text="View All" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="AchievementRectangle" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="589.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <Rectangle fx:id="AchievementRectangle1" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="726.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <Rectangle fx:id="AchievementRectangle3" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="863.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <Rectangle fx:id="AchievementRectangle4" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="589.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <Rectangle fx:id="AchievementRectangle5" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="726.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <Rectangle fx:id="AchievementRectangle6" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="863.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <ImageView fitHeight="134.0" fitWidth="730.0" layoutX="311.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/image%201.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgSpace" fitHeight="459.0" fitWidth="249.0" layoutX="23.0" layoutY="71.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/Space%20Image.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblHome" layoutX="40.0" layoutY="83.0" prefHeight="101.0" prefWidth="222.0" text="FINISH YOUR HABITS TO DISCOVER NEW PLANETS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="129.0" fitWidth="137.0" layoutX="23.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Planet1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="88.0" layoutX="185.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Planet3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="73.0" fitWidth="79.0" layoutX="182.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Planet2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="111.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Planet4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="246.0" fitWidth="227.0" layoutX="29.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../Images/Space%20Ship%20Image.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblHome" layoutX="164.0" layoutY="374.0" text="Explore" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="80.0" layoutX="166.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" width="79.0" />
+      <ImageView fitHeight="53.0" fitWidth="55.0" layoutX="179.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/image%204.png" />
+         </image>
+      </ImageView>
+      <Circle fill="#00000080" layoutX="148.0" layoutY="258.0" radius="58.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" />
+      <Label fx:id="lblHome" layoutX="112.0" layoutY="221.0" text="20%" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHome" layoutX="115.0" layoutY="265.0" text="Complete" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

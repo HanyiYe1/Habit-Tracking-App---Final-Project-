@@ -1,0 +1,30 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bruno+Ace&display=swap');
+
+#welcomeUserRectangle{
+	-fx-arc-height: 50;
+	-fx-arc-width: 25;
+}
+
+#habitMasteryZoneRectangle {
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0, 8, 8);
+}
+
+#lblConsole {
+	-fx-font-family: "Bruno Ace";
+	-fx-color: white;
+}
+
+#lblHome {
+	-fx-font-family: "Black Han Sans";
+	-fx-color: white;
+}
+
+#backgroundPane {
+	-fx-background-color: linear-gradient(#455D8D, #0B0E1E);
+}
+
+#AchievementRectangle {
+	-fx-fill: linear-gradient(#202D4E, #12192E);
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);
+}
