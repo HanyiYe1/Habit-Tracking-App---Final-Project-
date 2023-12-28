@@ -2,75 +2,48 @@ package application;
 
 public class Habits {
 	private String activity;
-	private int amountTimes;
-	private int amountDays;
-	private int smallestUnitAmount;
-	private String smallestUnitType;
-	private String reminderTime;
-	private boolean sameTimeForAllDays;
-	private String[] daysOn;
+	private String timeStart;
+	private int timeLength;
+	private String frequency;
+	private String difficulty;
 	
-	public Habits(String activity, int amountTimes, int amountDays, int smallestUnitAmount, String smallestUnitType, String reminderTime, boolean sameTimeAllDay, String[] daysOn) {
+	public Habits(String activity, String timeStart, int timeLength, String frequency, String difficulty) {
+		super();
 		this.activity = activity;
-		this.amountTimes = amountTimes;
-		this.amountDays = amountDays;
-		this.smallestUnitAmount = smallestUnitAmount;
-		this.smallestUnitType = smallestUnitType;
-		this.reminderTime = reminderTime;
-		this.sameTimeForAllDays = sameTimeAllDay;
-		this.daysOn = daysOn;
+		this.timeStart = timeStart;
+		this.timeLength = timeLength;
+		this.frequency = frequency;
+		this.difficulty = difficulty;
 	}
-	
-	
-	
 	public String getActivity() {
 		return activity;
 	}
 	public void setActivity(String activity) {
 		this.activity = activity;
 	}
-	public int getAmountTimes() {
-		return amountTimes;
+	public String getTimeStart() {
+		return timeStart;
 	}
-	public void setAmountTimes(int amountTimes) {
-		this.amountTimes = amountTimes;
+	public void setTimeStart(String timeStart) {
+		this.timeStart = timeStart;
 	}
-	public int getAmountDays() {
-		return amountDays;
+	public int getTimeLength() {
+		return timeLength;
 	}
-	public void setAmountDays(int amountDays) {
-		this.amountDays = amountDays;
+	public void setTimeLength(int timeLength) {
+		this.timeLength = timeLength;
 	}
-	public int getSmallestUnitAmount() {
-		return smallestUnitAmount;
+	public String getFrequency() {
+		return frequency;
 	}
-	public void setSmallestUnitAmount(int smallestUnitAmount) {
-		this.smallestUnitAmount = smallestUnitAmount;
+	public void setFrequency(String frequency) {
+		this.frequency = frequency;
 	}
-	public String getSmallestUnitType() {
-		return smallestUnitType;
+	public String getDifficulty() {
+		return difficulty;
 	}
-	public void setSmallestUnitType(String smallestUnitType) {
-		this.smallestUnitType = smallestUnitType;
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
 	}
-	public String getReminderTime() {
-		return reminderTime;
-	}
-	public void setReminderTime(String reminderTime) {
-		this.reminderTime = reminderTime;
-	}
-	public boolean isSameTimeForAllDays() {
-		return sameTimeForAllDays;
-	}
-	public void setSameTimeForAllDays(boolean sameTimeForAllDays) {
-		this.sameTimeForAllDays = sameTimeForAllDays;
-	}
-	public String[] getDaysOn() {
-		return daysOn;
-	}
-	public void setDaysOn(String[] daysOn) {
-		this.daysOn = daysOn;
-	}
-	
 	
 }

@@ -41,9 +41,46 @@
 	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);
 }
 
+.choice-box {
+	-fx-background-fills: white;
+}
+.choice-box > .label { -fx-text-fill: white; -fx-font-family: "Black Han Sans";}
+
+#txtHabitName {
+	-fx-background-color: rgba(0,0,0,0.2);
+	-fx-font-family: "Black Han Sans";
+	-fx-text-fill: white;
+	-fx-font-size: 30;
+}
+#txtCustomTime {
+	-fx-background-color: rgba(0,0,0,0.2);
+	-fx-font-family: "Black Han Sans";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+#txtTimeAmount {
+	-fx-font-family: "Black Han Sans";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+
+#txtDifficultyScale {
+	-fx-font-family: "Black Han Sans";
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+}
+
 #btnSwitchToMain {
 	-fx-background-color: rgba(0,0,0,0);
 }
+
 .button {
 	-fx-font-family: "Bruno Ace";
+}
+
+#btnClearWhen {
+	-fx-font-family: "Black Han Sans";
+}
+#btnClearHowLong {
+	-fx-font-family: "Black Han Sans";
 }
