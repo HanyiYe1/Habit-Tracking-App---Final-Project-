@@ -25,6 +25,11 @@
 	-fx-color: white;
 }
 
+#lblError {
+	-fx-font-family: "Black Han Sans";
+	
+}
+
 #backgroundPane {
 	-fx-background-color: linear-gradient(#455D8D, #0B0E1E);
 }
