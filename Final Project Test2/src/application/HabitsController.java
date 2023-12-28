@@ -43,6 +43,8 @@ public class HabitsController implements Initializable{
 	@FXML
 	private TextField txtDifficultyScale;
 	@FXML
+	private TextField txtHabitName;
+	@FXML
 	private Label lblError;
 	
 	public void switchToSceneMain(ActionEvent e) throws IOException {
@@ -66,13 +68,166 @@ public class HabitsController implements Initializable{
 	}
 	
 	public void addHabit(ActionEvent e) throws IOException {
-		boolean validHabit = false;
-		if (validHabit) {
+		if (validateActivity() && validateTimeStart() && validateTimeLength() && validateFrequency() && validateDifficulty()) {
+			lblError.setVisible(false);
+			Habits habit = new Habits();
+			habit.addHabit(habitInformations());
+			System.out.println(habitInformations());
+			
 			root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 			addScene(e);
 		}
 		else {
-			
+			lblError.setVisible(true);
+			errorMessage();
+		}
+	}
+	
+	private void errorMessage() {
+		// TODO Auto-generated method stub
+		if (!validateActivity()) {
+			lblError.setText("Invalid Habit Name.");
+		}
+		else if (!validateTimeStart()) {
+			lblError.setText("Invalid Start Time.");
+		}
+		else if (!validateTimeLength()) {
+			lblError.setText("Invalid Time Length.");
+		}
+		else if (!validateFrequency()){
+			lblError.setText("Invalid Frequency.");
+		}
+		else {
+			lblError.setText("Invalid Difficulty Scale");
+		}
+		
+	}
+
+	public String habitInformations() {
+		String text = "";
+		//Activity
+		text = text + txtHabitName.getText() + ",";
+		//Time
+		if (choiceBoxTime.getValue() == null) {
+			text = text + txtCustomTime.getText() + choiceBoxAMPM.getValue() + ",";
+		} else {
+			text = text + choiceBoxTime.getValue() + ",";
+		}
+		//Time Length
+		text = text + txtTimeAmount.getText() + choiceBoxHowLong.getValue() + ",";
+		
+		//How Often
+		text = text + choiceBoxFrequency.getValue() + ",";
+		
+		//Difficulty
+		text = text + txtDifficultyScale.getText();
+		
+		return text;
+	}
+	
+	public boolean validateActivity() {
+		String activity = txtHabitName.getText();
+		if (activity.equals("")) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
+	public boolean validateTimeStart() {
+		String timeStart = choiceBoxTime.getValue();
+		//Choice box selected
+		if (timeStart != null) {
+			return true;
+		}
+		//Custom time checker
+		else {
+			timeStart = txtCustomTime.getText();
+			String AMPM = choiceBoxAMPM.getValue();
+			//selected am or pm
+			if (AMPM != null) {
+				//correct time length: #:## or ##:##
+				if (timeStart.length() == 4 || timeStart.length() == 5) {
+					String[] number = timeStart.split(":");
+					//proper format
+					if (number.length == 2) {
+						try {
+							//valid looking numbers
+							int test = Integer.parseInt(number[0]);
+							int test2 = Integer.parseInt(number[1]);
+							if (test > 0 && test < 13 && test2 >= 0 && test2 < 60) {
+								return true;
+							}
+							else {
+								return false;
+							}
+						}
+						catch (Exception e) {
+							return false;
+						}
+					}
+					//Improper format
+					else {
+						return false;
+					}
+				}
+			}
+			//Null choice for am or pm
+			else {
+				return false;
+			}
+		}
+		System.out.println("Not working");
+		return false;
+	}
+	
+	public boolean validateTimeLength() {
+		String timeLength = txtTimeAmount.getText();
+		String timeType = choiceBoxHowLong.getValue();
+		if (timeType != null && !timeLength.equals("")) {
+			try {
+				int test = Integer.parseInt(timeLength);
+				return true;
+			}
+			catch (Exception e) {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean validateFrequency() {
+		String frequency = choiceBoxFrequency.getValue();
+		if (frequency != null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean validateDifficulty() {
+		String difficulty = txtDifficultyScale.getText();
+		if (!difficulty.equals("")) {
+			try {
+				int test = Integer.parseInt(difficulty);
+				if (test > 0 && test < 11) {
+					return true;
+				}
+				else {
+					return false;
+				}
+				
+			}
+			catch (Exception e) {
+				return false;
+			}
+		}
+		else {
+			return false;
 		}
 	}
 	
@@ -85,7 +240,6 @@ public class HabitsController implements Initializable{
         stage.setScene(scene);
         stage.show();
      }
-
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
