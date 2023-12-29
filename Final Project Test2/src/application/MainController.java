@@ -133,9 +133,9 @@ public class MainController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			clipSpaceImage();
+			setDate();
 			displayNoHabits();
 			setPercentageComplete();
-			setDate();
 			Habits habit = new Habits();
 
 			if (habit.habits.size() >= 2) {
@@ -181,18 +181,41 @@ public class MainController implements Initializable {
 				amountCompleted++;
 			}
 		}
-		System.out.println(amountCompleted);
-		System.out.println(habit.habits.size());
+		//System.out.println(amountCompleted);
+		//System.out.println(habit.habits.size());
+		int percent = (int) Math.round(amountCompleted/habit.habits.size() * 100);
 		if (habit.habits.size() == 0) {
 			lblPercentComplete.setText("0%");
 			System.out.println("Going here");
 		}
 		else {
-			int percent = (int) Math.round(amountCompleted/habit.habits.size() * 100);
 			System.out.println(percent);
 			Habits.setPercentComplete(percent);
 			lblPercentComplete.setText(Integer.toString(percent) + "%");
 		}
+		
+		if (percent == 100) {
+			Streak streak = new Streak();
+			if (streak.dates.contains(lblDate.getText())) {
+				//Do nothing since the streak has been added.
+				System.out.println("Going into here");
+				setStreak();
+			}
+			else {
+				streak.addDate(lblDate.getText());
+				Streak.increaseStreak();
+				
+				setStreak();
+			}
+		}
+	}
+	
+	private void setStreak() throws FileNotFoundException, IOException {
+		Streak streak = new Streak();
+		streak.calculateStreak();
+		System.out.println("Streak: " + Streak.streak);
+		lblStreakNumber.setText(Integer.toString(Streak.streak));
+		
 	}
 
 	private void displayHabit2(ArrayList<Habits> habits) {

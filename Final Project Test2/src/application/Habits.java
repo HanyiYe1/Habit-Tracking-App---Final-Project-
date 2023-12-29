@@ -17,7 +17,6 @@ public class Habits {
 	private String frequency;
 	private String difficulty;
 	private static int percentComplete;
-	private static int streak = 0;
 	public ArrayList<Habits> habits = new ArrayList<>();
 	
 	public Habits() throws FileNotFoundException, IOException {
@@ -57,12 +56,12 @@ public class Habits {
 	
 	public void addHabit(String habit) throws IOException {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("bin/habits.txt", true))){
-			  writer.write(habit);
-			  writer.newLine();
-			}
-			catch(IOException ex){
-			  ex.printStackTrace();
-			}
+			writer.write(habit);
+			writer.newLine();
+		}
+		catch(IOException ex){
+			ex.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -125,14 +124,6 @@ public class Habits {
 	
 	public void setDifficulty(String difficulty) {
 		this.difficulty = difficulty;
-	}
-
-	public static int getStreak() {
-		return streak;
-	}
-
-	public static void setStreak(int streak) {
-		Habits.streak = streak;
 	}
 	
 }
