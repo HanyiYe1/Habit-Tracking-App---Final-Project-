@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 
 public class Main extends Application {
@@ -24,6 +25,8 @@ public class Main extends Application {
 			main.getStylesheets().add(css);
 			habit.getStylesheets().add(css);
 			
+			Image icon = new Image("homeImages/space_habit_tracking_logo_3.jpg");
+			primaryStage.getIcons().add(icon);
 			primaryStage.setScene(main);
 			primaryStage.setTitle("Hanyi Ye's Habit Tracking App");
 			primaryStage.show();
@@ -34,22 +37,6 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		/*
-		System.out.println("Doing");
-		try {
-	      File myObj = new File("bin/habits.txt");
-	      Scanner myReader = new Scanner(myObj);
-	      System.out.println(myObj);
-	      while (myReader.hasNextLine()) {
-	        String data = myReader.nextLine();
-	        System.out.println(data);
-	      }
-	      myReader.close();
-	    } catch (FileNotFoundException e) {
-	      System.out.println("An error occurred.");
-	      e.printStackTrace();
-	    }
-	    */
 		launch(args);
 		
 	}

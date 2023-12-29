@@ -12,6 +12,11 @@
 
 <AnchorPane fx:id="habitsPane1" prefHeight="787.0" prefWidth="795.0" style="-fx-background-color: linear-gradient(#323367, #32345A);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HabitsController">
    <children>
+      <ImageView fitHeight="697.0" fitWidth="481.0" opacity="0.59" pickOnBounds="true">
+         <image>
+            <Image url="@../homeImages/Space%20Image.png" />
+         </image>
+      </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" layoutX="-1.0" layoutY="722.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#E57454, #F9725C);" width="458.0" />
       <ImageView fitHeight="350.0" fitWidth="291.0" layoutX="76.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
          <image>

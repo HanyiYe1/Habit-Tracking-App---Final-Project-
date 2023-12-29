@@ -104,7 +104,7 @@ public class HabitsController implements Initializable{
 	}
 
 	public String habitInformations() {
-		String text = "";
+		String text = "Incomplete,";
 		//Activity
 		text = text + txtHabitName.getText() + ",";
 		//Time
@@ -114,7 +114,7 @@ public class HabitsController implements Initializable{
 			text = text + choiceBoxTime.getValue() + ",";
 		}
 		//Time Length
-		text = text + txtTimeAmount.getText() + choiceBoxHowLong.getValue() + ",";
+		text = text + txtTimeAmount.getText() + " " + choiceBoxHowLong.getValue() + ",";
 		
 		//How Often
 		text = text + choiceBoxFrequency.getValue() + ",";

@@ -27,7 +27,29 @@
 
 #lblError {
 	-fx-font-family: "Black Han Sans";
-	
+}
+
+#lblCompleted1 {
+	-fx-font-family: "Black Han Sans";
+}
+
+#lblCompleted2 {
+	-fx-font-family: "Black Han Sans";
+}
+#lblPercentComplete {
+	-fx-font-family: "Black Han Sans";
+}
+#lblStreakNumber {
+	-fx-font-family: "Black Han Sans";
+	-fx-font-size: 40;
+}
+#lblDate {
+	-fx-font-family: "Black Han Sans";
+	-fx-font-size: 30;
+}
+#lblDay {
+	-fx-font-family: "Black Han Sans";
+	-fx-font-size: 25;
 }
 
 #backgroundPane {
@@ -81,6 +103,13 @@
 
 .button {
 	-fx-font-family: "Bruno Ace";
+}
+
+#btnComplete1 {
+	-fx-font-family: "System";
+}
+#btnComplete2 {
+	-fx-font-family: "System";
 }
 
 #btnClearWhen {
