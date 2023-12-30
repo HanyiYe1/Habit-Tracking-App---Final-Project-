@@ -58,7 +58,7 @@ public class Streak {
         LocalDate date2 = LocalDate.parse(dateString2, formatter);
 
         // Check if the second date immediately follows the first date
-        return date2.equals(date1.plusDays(1));
+        return date2.equals(date1.minusDays(1));
     }
 	
 	public void addDate(String date) {
