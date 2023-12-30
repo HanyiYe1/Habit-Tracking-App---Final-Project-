@@ -19,7 +19,9 @@ public class Streak {
 		this.dates = getDates();
 	}
 	
+	@SuppressWarnings("unlikely-arg-type")
 	public void calculateStreak() throws FileNotFoundException, IOException {
+		LocalDate today = LocalDate.now();
 		//dates = getDates();
 		System.out.println(dates.toString());
 		//Reverse the dates
@@ -31,18 +33,36 @@ public class Streak {
 		//Check for consecutive dates
 		int consecutiveDates = 0;
 		for (int i = 0; i < reversedDates.size(); i++) {
-			System.out.println("Index: " + (i + 1));
-			if ( (i + 1) < reversedDates.size()) {
-				System.out.println("Going in here");
-				if (areConsecutive(reversedDates.get(i), reversedDates.get(i + 1))) {
+			//Day included in streaks calculation
+			if (today.equals(reversedDates.get(0))) {
+				System.out.println("Index: " + (i + 1));
+				if ( (i + 1) < reversedDates.size()) {
+					System.out.println("Going in here");
+					if (areConsecutive(reversedDates.get(i), reversedDates.get(i + 1))) {
+						consecutiveDates++;
+					}
+					else {
+						consecutiveDates++;
+						break;
+					}
+				} else {
 					consecutiveDates++;
 				}
-				else {
+			}
+			//Today not included in streaks calculation
+			else {
+				if ( (i + 2) < reversedDates.size()) {
+					System.out.println("Going in here");
+					if (areConsecutive(reversedDates.get(i + 1), reversedDates.get(i + 2))) {
+						consecutiveDates++;
+					}
+					else {
+						consecutiveDates++;
+						break;
+					}
+				} else {
 					consecutiveDates++;
-					break;
 				}
-			} else {
-				consecutiveDates++;
 			}
 		}
 		streak = consecutiveDates;

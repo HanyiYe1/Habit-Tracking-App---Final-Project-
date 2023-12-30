@@ -133,11 +133,14 @@ public class MainController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			clipSpaceImage();
+			Habits habit = new Habits();
+			habit.resetHabits();
 			setDate();
 			displayNoHabits();
 			setPercentageComplete();
-			Habits habit = new Habits();
-
+			setStreak();
+			
+			
 			if (habit.habits.size() >= 2) {
 				displayHabit1(habit.habits);
 				displayHabit2(habit.habits);

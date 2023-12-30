@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Habits {
@@ -63,6 +65,43 @@ public class Habits {
 			ex.printStackTrace();
 		}
 	}
+	
+	public void resetHabits() throws FileNotFoundException, IOException {
+		Streak streak = new Streak();
+		ArrayList<String> reversedDates = new ArrayList<String>();
+		for (int i = streak.dates.size() - 1; i >= 0; i--) {
+            // Append the elements in reverse order
+			reversedDates.add(streak.dates.get(i));
+        }
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        // Parse the input string into a LocalDate object
+		if (reversedDates.size() == 0) {
+        	for (Habits habit : habits) {
+        		habit.setStatus("Incomplete");
+        	}
+        	clearHabits();
+        	for (Habits habit : habits) {
+        		addHabit(habit.toString());
+        	}
+		}
+		else {
+			LocalDate otherDate = LocalDate.parse(reversedDates.get(0), formatter);
+	        // Get today's date
+	        LocalDate today = LocalDate.now();
+	        
+	        if (!today.equals(otherDate)) {
+	        	for (Habits habit : habits) {
+	        		habit.setStatus("Incomplete");
+	        	}
+	        	clearHabits();
+	        	for (Habits habit : habits) {
+	        		addHabit(habit.toString());
+	        	}
+	        }
+		}
+	}
+	
 	
 	@Override
 	public String toString() {
