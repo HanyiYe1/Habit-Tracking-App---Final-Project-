@@ -97,12 +97,18 @@ public class MainController implements Initializable {
 	private Scene scene;
 	private Parent root;
 	private Parent root2;	
+	private Parent root3;
 	@FXML
 	private Button btnMoreHabits;
 	
+	public void switchToSceneAllHabits(ActionEvent e) throws IOException {
+		root3 = FXMLLoader.load(getClass().getResource("AllHabits.fxml"));
+		addSceneAllHabit(e);
+	}
+	
 	public void switchToSceneHabit(ActionEvent e) throws IOException {
 		root2 = FXMLLoader.load(getClass().getResource("Habits.fxml"));
-		addScene(e);
+		addSceneAddHabit(e);
 	}
 	
 	public void setComplete1(ActionEvent e) throws FileNotFoundException, IOException {
@@ -331,7 +337,7 @@ public class MainController implements Initializable {
         imgSpace.setImage(image);
 	}
 
-	private void addScene(ActionEvent event){
+	private void addSceneAddHabit(ActionEvent event){
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root2);
         String css = this.getClass().getResource("application.css").toExternalForm();
@@ -339,5 +345,14 @@ public class MainController implements Initializable {
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
-     }
+	}
+	private void addSceneAllHabit(ActionEvent event) {
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root3);
+        String css = this.getClass().getResource("application.css").toExternalForm();
+        // Set the stylesheet after the scene creation
+        scene.getStylesheets().add(css);
+        stage.setScene(scene);
+        stage.show();
+	}
 }

@@ -116,7 +116,7 @@
          </font>
       </Button>
       <Rectangle fx:id="rectHabit1" arcHeight="50.0" arcWidth="50.0" fill="#00000043" height="101.0" layoutX="313.0" layoutY="196.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
-      <Button fx:id="btnMoreHabits" layoutX="385.0" layoutY="407.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: rgba(0,0,0,0);" text="View All" textFill="WHITE">
+      <Button fx:id="btnMoreHabits" layoutX="385.0" layoutY="407.0" mnemonicParsing="false" onAction="#switchToSceneAllHabits" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: rgba(0,0,0,0);" text="View All" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

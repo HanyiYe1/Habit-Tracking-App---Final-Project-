@@ -18,12 +18,15 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 			Parent root2 = FXMLLoader.load(getClass().getResource("Habits.fxml"));
+			Parent root3 = FXMLLoader.load(getClass().getResource("AllHabits.fxml"));
 			Scene main = new Scene(root);
 			Scene habit = new Scene(root2);
+			Scene allHabits = new Scene(root3);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			String css = this.getClass().getResource("application.css").toExternalForm();
 			main.getStylesheets().add(css);
 			habit.getStylesheets().add(css);
+			allHabits.getStylesheets().add(css);
 			
 			Image icon = new Image("homeImages/space_habit_tracking_logo_3.jpg");
 			primaryStage.getIcons().add(icon);
