@@ -8,12 +8,14 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -23,6 +25,13 @@ public class AllHabitsController implements Initializable {
 	
 	@FXML
 	private VBox vboxHabits;
+	@FXML 
+	private VBox vboxRemoveButton;
+	@FXML
+	private VBox vboxCompleteButtons;
+	@FXML
+	private VBox vboxStatus;
+	
 
 	@FXML
 	private Stage stage;
@@ -45,11 +54,19 @@ public class AllHabitsController implements Initializable {
 			for (int i = 0; i < habitsToUse.size(); i++) {
 				FXMLLoader fxmlloader = new FXMLLoader();
 				fxmlloader.setLocation(getClass().getResource("HabitsDesign.fxml"));
-				
+				//Add habits
 				AnchorPane pane = fxmlloader.load();
 				HabitsDesignController hdc = fxmlloader.getController();
 				hdc.setData(habitsToUse.get(i));
 				vboxHabits.getChildren().add(pane);
+				
+				FXMLLoader fxmlloader2 = new FXMLLoader();
+				fxmlloader2.setLocation(getClass().getResource("CompleteButtonDesign.fxml"));
+				AnchorPane pane2 = fxmlloader2.load();
+				CompleteButtonDesignController cbdc = fxmlloader2.getController();
+				cbdc.setButtonFor(habit.habits.get(i).getActivity());
+				vboxCompleteButtons.getChildren().add(pane2);
+				
 			}
 			
 			
@@ -67,6 +84,17 @@ public class AllHabitsController implements Initializable {
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
+	}
+	
+	
+	public void toggleComplete() throws FileNotFoundException, IOException {
+		Habits habit = new Habits();
+		ArrayList<String> currentStatuses = new ArrayList<String>();
+		int row = 0;
+		for (int i = 0; i < habit.habits.size(); i++) {
+			currentStatuses.add(habit.habits.get(i).getStatus());
+		}
+		
 	}
 
 }
