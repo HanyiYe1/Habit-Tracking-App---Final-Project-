@@ -15,9 +15,8 @@
                <children>
                   <HBox prefHeight="642.0" prefWidth="839.0" style="-fx-background-color: black;">
                      <children>
-                        <VBox fx:id="vboxRemoveButton" prefHeight="642.0" prefWidth="96.0" style="-fx-border-color: black; -fx-background-color: #465481;" />
-                        <VBox fx:id="vboxHabits" prefHeight="642.0" prefWidth="231.0" style="-fx-border-color: black; -fx-background-color: #465481;" />
-                        <VBox fx:id="vboxCompleteButtons" prefHeight="642.0" prefWidth="500.0" style="-fx-border-color: black; -fx-background-color: #465481; -fx-alignment: TOP_CENTER; -fx-spacing: 0; -fx-padding: 0;" />
+                        <VBox fx:id="vboxHabits" prefHeight="642.0" prefWidth="261.0" style="-fx-border-color: black; -fx-background-color: #465481;" />
+                        <VBox fx:id="vboxCompleteButtons" prefHeight="642.0" prefWidth="499.0" style="-fx-border-color: black; -fx-background-color: #465481; -fx-alignment: TOP_CENTER; -fx-spacing: 0; -fx-padding: 0;" />
                      </children>
                   </HBox>
                </children>

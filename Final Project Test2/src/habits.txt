@@ -1,0 +1,7 @@
+Incomplete,W,2:00AM,2 Minutes,Weekly,3
+Incomplete,E,1:00AM,2 Minutes,Weekly,3
+Incomplete,R,2:00AM,2 Minutes,Weekly,4
+Incomplete,T,2:00AM,3 Hours,Weekly,4
+Incomplete,Y,1:00AM,2 Minutes,Weekly,3
+Incomplete,U,2:00AM,3 Minutes,Weekly,4
+Incomplete,I,2:00AM,2 Minutes,Weekly,4
