@@ -39,41 +39,7 @@ public class AllHabitsController implements Initializable {
 		root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 		addSceneMain(e);
 	}
-	
-	public void reInitialize() {
-		try {
-			vboxHabits.getChildren().clear();
-			vboxCompleteButtons.getChildren().clear();
-			
-			
-			Habits habit = new Habits();
-			List<Habits> habitsToUse = habit.habits;
-			for (int i = 0; i < habitsToUse.size(); i++) {
-				FXMLLoader fxmlloader = new FXMLLoader();
-				fxmlloader.setLocation(getClass().getResource("HabitsDesign.fxml"));
-				//Add habits
-				AnchorPane pane = fxmlloader.load();
-				HabitsDesignController hdc = fxmlloader.getController();
-				hdc.setData(habitsToUse.get(i));
-				vboxHabits.getChildren().add(pane);
-				
-				FXMLLoader fxmlloader2 = new FXMLLoader();
-				fxmlloader2.setLocation(getClass().getResource("CompleteButtonDesign.fxml"));
-				AnchorPane pane2 = fxmlloader2.load();
-				CompleteButtonDesignController cbdc = fxmlloader2.getController();
-				cbdc.setButtonFor(habit.habits.get(i).getActivity());
-				cbdc.startup(habit.habits.get(i).getStatus());
-				vboxCompleteButtons.getChildren().add(pane2);
-				
-			}
-			
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
+		
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
@@ -87,18 +53,11 @@ public class AllHabitsController implements Initializable {
 				AnchorPane pane = fxmlloader.load();
 				HabitsDesignController hdc = fxmlloader.getController();
 				hdc.setData(habitsToUse.get(i));
-				hdc.setVBoxes(vboxHabits, vboxCompleteButtons);
+				hdc.setVBoxes(vboxHabits);
+				hdc.setButtonFor(habit.habits.get(i).getActivity());
+				hdc.startup(habit.habits.get(i).getStatus());
 				vboxHabits.getChildren().add(pane);
-				
-				
-				FXMLLoader fxmlloader2 = new FXMLLoader();
-				fxmlloader2.setLocation(getClass().getResource("CompleteButtonDesign.fxml"));
-				AnchorPane pane2 = fxmlloader2.load();
-				CompleteButtonDesignController cbdc = fxmlloader2.getController();
-				cbdc.setButtonFor(habit.habits.get(i).getActivity());
-				cbdc.startup(habit.habits.get(i).getStatus());
-				vboxCompleteButtons.getChildren().add(pane2);
-				
+
 			}
 			
 			

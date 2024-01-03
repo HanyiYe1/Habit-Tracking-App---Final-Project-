@@ -8,31 +8,41 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="105.0" prefWidth="271.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HabitsDesignController">
+<AnchorPane prefHeight="281.0" prefWidth="312.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HabitsDesignController">
    <children>
-      <Rectangle fx:id="rectHabit" arcHeight="50.0" arcWidth="50.0" fill="#0000004d" height="101.0" layoutX="46.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
-      <Label fx:id="lblActivityName" alignment="CENTER" layoutX="106.0" layoutY="24.0" prefHeight="21.0" prefWidth="156.0" text="Activity Name" textFill="WHITE">
+      <Rectangle fx:id="rectHabit" arcHeight="50.0" arcWidth="50.0" fill="#0000004d" height="101.0" layoutX="65.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
+      <Label fx:id="lblActivityName" alignment="CENTER" layoutX="125.0" layoutY="36.0" prefHeight="21.0" prefWidth="156.0" text="Activity Name" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="lblTimeStart" alignment="CENTER" layoutX="106.0" layoutY="9.0" prefHeight="17.0" prefWidth="156.0" text="8:00AM" textFill="WHITE" />
-      <Label fx:id="lblTimeAmount" layoutX="105.0" layoutY="51.0" prefHeight="17.0" prefWidth="96.0" text="TimeAmount" textFill="WHITE" />
-      <Label fx:id="lblFrequency" alignment="CENTER_RIGHT" layoutX="194.0" layoutY="50.0" prefHeight="19.0" prefWidth="69.0" text="Frequency" textAlignment="RIGHT" textFill="WHITE" />
-      <Label fx:id="lblDifficulty" alignment="CENTER" layoutX="47.0" layoutY="72.0" prefHeight="21.0" prefWidth="222.0" text="Difficulty: " textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lblTimeStart" alignment="CENTER" layoutX="125.0" layoutY="21.0" prefHeight="17.0" prefWidth="156.0" text="8:00AM" textFill="WHITE" />
+      <Label fx:id="lblTimeAmount" layoutX="124.0" layoutY="63.0" prefHeight="17.0" prefWidth="96.0" text="TimeAmount" textFill="WHITE" />
+      <Label fx:id="lblFrequency" alignment="CENTER_RIGHT" layoutX="213.0" layoutY="62.0" prefHeight="19.0" prefWidth="69.0" text="Frequency" textAlignment="RIGHT" textFill="WHITE" />
+      <Label fx:id="lblDifficulty" alignment="CENTER" layoutX="66.0" layoutY="84.0" prefHeight="21.0" prefWidth="222.0" text="Difficulty: " textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgIcon" fitHeight="53.0" fitWidth="41.0" layoutX="51.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgIcon" fitHeight="53.0" fitWidth="41.0" layoutX="70.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../homeImages/list-check%20(1).png" />
          </image>
       </ImageView>
-      <Button layoutX="6.0" layoutY="34.0" mnemonicParsing="false" onAction="#removeHabit" prefHeight="34.0" prefWidth="34.0" style="-fx-background-radius: 20; -fx-background-color: red;" text="-" textFill="WHITE">
+      <Button layoutX="25.0" layoutY="46.0" mnemonicParsing="false" onAction="#removeHabit" prefHeight="34.0" prefWidth="34.0" style="-fx-background-radius: 20; -fx-background-color: red;" text="-" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
+      <Button fx:id="btnComplete" layoutX="24.0" layoutY="123.0" mnemonicParsing="false" onAction="#toggleComplete" prefHeight="41.0" prefWidth="265.0" style="-fx-background-color: rgba(0,0,0,0.25); -fx-background-radius: 50;" text="Set As Complete/Incomplete" textFill="WHITE">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblCompleted1" alignment="TOP_CENTER" layoutX="56.0" layoutY="164.0" prefHeight="68.0" prefWidth="202.0" text="Completed" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
