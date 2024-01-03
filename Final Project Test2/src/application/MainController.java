@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -140,7 +143,8 @@ public class MainController implements Initializable {
 		try {
 			clipSpaceImage();
 			Habits habit = new Habits();
-			habit.resetHabits();
+			
+			//habit.resetHabits();
 			setDate();
 			displayNoHabits();
 			setPercentageComplete();
@@ -165,6 +169,7 @@ public class MainController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	private void setDate() {
 		//Set date as in "yyyy/MM/dd"

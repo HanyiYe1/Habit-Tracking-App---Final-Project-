@@ -2,7 +2,11 @@ package application;
 	
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +38,30 @@ public class Main extends Application {
 			primaryStage.setTitle("Hanyi Ye's Habit Tracking App");
 			primaryStage.show();
 			primaryStage.setResizable(false);
+			
+			Habits habitClass = new Habits();
+			
+			ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+			scheduler.scheduleAtFixedRate(new Runnable() {
+	            @Override
+	            public void run() {
+	                try {
+	                	habitClass.resetHabits();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	            }
+	        }, 0, 1, TimeUnit.DAYS);
+	        // Shutdown the scheduler when the program exits
+	        // Note: In a real application, you may want to handle shutdown gracefully
+	        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+	            @Override
+	            public void run() {
+	                scheduler.shutdown();
+	            }
+	        }));
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

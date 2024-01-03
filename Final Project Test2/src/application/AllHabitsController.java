@@ -65,6 +65,7 @@ public class AllHabitsController implements Initializable {
 				AnchorPane pane2 = fxmlloader2.load();
 				CompleteButtonDesignController cbdc = fxmlloader2.getController();
 				cbdc.setButtonFor(habit.habits.get(i).getActivity());
+				cbdc.startup(habit.habits.get(i).getStatus());
 				vboxCompleteButtons.getChildren().add(pane2);
 				
 			}
