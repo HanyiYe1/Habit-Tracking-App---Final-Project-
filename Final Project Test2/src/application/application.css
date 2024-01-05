@@ -24,6 +24,10 @@
 	-fx-font-family: "Black Han Sans";
 	-fx-color: white;
 }
+#lblAllHabits {
+	-fx-font-family: "Black Han Sans";
+	-fx-color: white;
+}
 
 #lblError {
 	-fx-font-family: "Black Han Sans";
@@ -95,6 +99,10 @@
 	-fx-font-family: "Black Han Sans";
 	-fx-text-fill: white;
 	-fx-font-size: 12;
+}
+
+#txtSearchHabit {
+	-fx-font-family: "Black Han Sans";
 }
 
 #btnSwitchToMain {

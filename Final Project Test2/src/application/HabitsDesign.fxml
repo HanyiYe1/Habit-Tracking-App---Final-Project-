@@ -2,13 +2,14 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="281.0" prefWidth="312.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HabitsDesignController">
+<AnchorPane prefHeight="228.0" prefWidth="312.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HabitsDesignController">
    <children>
       <Rectangle fx:id="rectHabit" arcHeight="50.0" arcWidth="50.0" fill="#0000004d" height="101.0" layoutX="65.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
       <Label fx:id="lblActivityName" alignment="CENTER" layoutX="125.0" layoutY="36.0" prefHeight="21.0" prefWidth="156.0" text="Activity Name" textFill="WHITE">
@@ -39,10 +40,11 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Label fx:id="lblCompleted1" alignment="TOP_CENTER" layoutX="56.0" layoutY="164.0" prefHeight="68.0" prefWidth="202.0" text="Completed" textFill="WHITE">
+      <Label fx:id="lblCompleted1" alignment="TOP_CENTER" layoutX="56.0" layoutY="164.0" prefHeight="41.0" prefWidth="202.0" text="Completed" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
+      <Separator layoutX="9.0" layoutY="210.0" prefHeight="1.0" prefWidth="294.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>
