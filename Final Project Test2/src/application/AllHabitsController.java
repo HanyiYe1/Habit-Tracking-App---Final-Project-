@@ -45,8 +45,10 @@ public class AllHabitsController implements Initializable {
     private Label lblAllHabits;
 
     @FXML
-    private Label lblError;
+    private Label lblErrorSearch;
 
+    @FXML
+    private Label lblErrorSort;
     @FXML
     private TextField txtSearchHabit;
 	
@@ -89,8 +91,8 @@ public class AllHabitsController implements Initializable {
 			}
 		}
 		if (habitFound == null) {
-			lblError.setText("No habit found.");
-			lblError.setVisible(true);
+			lblErrorSearch.setText("No habit found.");
+			lblErrorSearch.setVisible(true);
 			imgIcon.setVisible(false);
 			lblActivityName.setVisible(false);
 			lblDifficulty.setVisible(false);
@@ -100,7 +102,7 @@ public class AllHabitsController implements Initializable {
 			rectHabit.setVisible(false);
 		}
 		else {
-			lblError.setVisible(false);
+			lblErrorSearch.setVisible(false);
 			imgIcon.setVisible(true);
 			lblActivityName.setVisible(true);
 			lblActivityName.setText(habitFound.getActivity());
@@ -123,16 +125,16 @@ public class AllHabitsController implements Initializable {
 		String sortOrder = choiceBoxSortOrder.getValue();
 		//Invalid sort type
 		if (sortType == null) {
-			lblError.setText("Invalid sort type.");
-			lblError.setVisible(true);
+			lblErrorSort.setText("Invalid sort type.");
+			lblErrorSort.setVisible(true);
 		}
 		//Valid sort type
 		else {
-			lblError.setVisible(false);
+			lblErrorSort.setVisible(false);
 			//Invalid sort order
 			if (sortOrder == null) {
-				lblError.setText("Invalid sort order.");
-				lblError.setVisible(true);
+				lblErrorSort.setText("Invalid sort order.");
+				lblErrorSort.setVisible(true);
 			}
 			//Valid sort order
 			else {
@@ -192,8 +194,8 @@ public class AllHabitsController implements Initializable {
 			vboxHabits.getChildren().add(pane);
 
 		}
-		lblError.setVisible(false);
-		
+		lblErrorSearch.setVisible(false);
+		lblErrorSort.setVisible(false);
 	}
 		
 	@Override
@@ -218,8 +220,8 @@ public class AllHabitsController implements Initializable {
 			
 			choiceBoxSortOrder.getItems().addAll(sortOrder);
 			choiceBoxSortType.getItems().addAll(sortType);
-			lblError.setVisible(false);
-			
+			lblErrorSearch.setVisible(false);
+			lblErrorSort.setVisible(false);
 			imgIcon.setVisible(false);
 			lblActivityName.setVisible(false);
 			lblDifficulty.setVisible(false);

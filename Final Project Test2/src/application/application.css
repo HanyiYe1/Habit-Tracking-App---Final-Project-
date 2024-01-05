@@ -32,6 +32,12 @@
 #lblError {
 	-fx-font-family: "Black Han Sans";
 }
+#lblErrorSearch {
+	-fx-font-family: "Black Han Sans";
+}
+#lblErrorSort {
+	-fx-font-family: "Black Han Sans";
+}
 
 #lblCompleted1 {
 	-fx-font-family: "Black Han Sans";
@@ -126,4 +132,5 @@
 #btnClearHowLong {
 	-fx-font-family: "Black Han Sans";
 }
+
 

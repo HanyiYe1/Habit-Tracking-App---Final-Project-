@@ -13,10 +13,20 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onDragDetected="#switchToSceneMain" prefHeight="731.0" prefWidth="1083.0" style="-fx-background-color: linear-gradient(#0D0D24, #222743, #0D0D24);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AllHabitsController">
+<AnchorPane onDragDetected="#switchToSceneMain" prefHeight="783.0" prefWidth="679.0" style="-fx-background-color: linear-gradient(#0D0D24, #222743, #0D0D24);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AllHabitsController">
    <children>
-      <Button fx:id="btnBackToHome" layoutX="233.0" layoutY="664.0" mnemonicParsing="false" onAction="#switchToSceneMain" prefHeight="34.0" prefWidth="214.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Back to Home" />
-      <ScrollPane layoutX="705.0" layoutY="42.0" prefHeight="648.0" prefWidth="339.0">
+      <ImageView fitHeight="786.0" fitWidth="661.0" layoutX="36.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.1" pickOnBounds="true">
+         <image>
+            <Image url="@../allHabitsImages/Leonardo_Diffusion_XL_space_themed_background_for_website_dark_3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="542.0" fitWidth="679.0" layoutY="-140.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../allHabitsImages/image-removebg-preview%20(59).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBackToHome" layoutX="430.0" layoutY="703.0" mnemonicParsing="false" onAction="#switchToSceneMain" prefHeight="34.0" prefWidth="214.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Back to Home" />
+      <ScrollPane fx:id="scrollPaneHabits" layoutX="14.0" layoutY="118.0" prefHeight="648.0" prefWidth="339.0">
         <content>
           <AnchorPane>
                <children>
@@ -30,58 +40,59 @@
         </content>
       </ScrollPane>
       <AnchorPane layoutX="7.0" />
-      <Label fx:id="lblAllHabits" layoutX="163.0" layoutY="27.0" text="All Habits" textFill="WHITE">
+      <Label fx:id="lblAllHabits" layoutX="177.0" layoutY="14.0" text="All Habits" textFill="WHITE">
          <font>
             <Font size="70.0" />
          </font>
       </Label>
-      <Label fx:id="lblAllHabits" layoutX="50.0" layoutY="147.0" text="Sort By:" textFill="WHITE">
+      <Label fx:id="lblAllHabits" layoutX="451.0" layoutY="460.0" text="Sort By:" textFill="WHITE">
          <font>
-            <Font size="20.0" />
+            <Font size="40.0" />
          </font>
       </Label>
-      <Label fx:id="lblAllHabits" alignment="CENTER" layoutX="53.0" layoutY="211.0" prefHeight="30.0" prefWidth="382.0" text="Search Habit:" textFill="WHITE">
+      <Label fx:id="lblAllHabits" alignment="CENTER" layoutX="410.0" layoutY="145.0" prefHeight="30.0" prefWidth="237.0" text="Search" textFill="WHITE">
          <font>
-            <Font size="20.0" />
+            <Font size="40.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchHabit" layoutX="50.0" layoutY="257.0" prefHeight="31.0" prefWidth="196.0">
+      <TextField fx:id="txtSearchHabit" layoutX="391.0" layoutY="212.0" prefHeight="31.0" prefWidth="275.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff4d" height="124.0" layoutX="123.0" layoutY="308.0" stroke="BLACK" strokeType="INSIDE" width="249.0" />
-      <ChoiceBox fx:id="choiceBoxSortType" layoutX="140.0" layoutY="145.0" prefHeight="25.0" prefWidth="123.0" />
-      <ChoiceBox fx:id="choiceBoxSortOrder" layoutX="282.0" layoutY="145.0" prefWidth="150.0" />
-      <Button fx:id="btnSort" layoutX="447.0" layoutY="140.0" mnemonicParsing="false" onAction="#sortBy" prefHeight="34.0" prefWidth="196.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Sort">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff4d" height="124.0" layoutX="381.0" layoutY="306.0" stroke="BLACK" strokeType="INSIDE" width="296.0" />
+      <ChoiceBox fx:id="choiceBoxSortType" layoutX="377.0" layoutY="533.0" prefHeight="25.0" prefWidth="141.0" />
+      <ChoiceBox fx:id="choiceBoxSortOrder" layoutX="537.0" layoutY="533.0" prefHeight="25.0" prefWidth="141.0" />
+      <Button fx:id="btnSort" layoutX="432.0" layoutY="569.0" mnemonicParsing="false" onAction="#sortBy" prefHeight="31.0" prefWidth="196.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Sort">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Label fx:id="lblError" alignment="CENTER" layoutX="4.0" layoutY="454.0" prefHeight="34.0" prefWidth="701.0" text="Error Message" textFill="WHITE" wrapText="true" />
-      <Button fx:id="btnSort1" layoutX="272.0" layoutY="256.0" mnemonicParsing="false" onAction="#searchActivity" prefHeight="34.0" prefWidth="161.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Search">
+      <Label fx:id="lblErrorSearch" alignment="CENTER" layoutX="400.0" layoutY="425.0" prefHeight="34.0" prefWidth="261.0" text="Error Message" textFill="WHITE" wrapText="true" />
+      <Button fx:id="btnSort1" layoutX="425.0" layoutY="252.0" mnemonicParsing="false" onAction="#searchActivity" prefHeight="34.0" prefWidth="207.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Search">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Rectangle fx:id="rectHabit" arcHeight="50.0" arcWidth="50.0" fill="#0000004d" height="101.0" layoutX="135.0" layoutY="316.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
-      <Label fx:id="lblActivityName" alignment="CENTER" layoutX="195.0" layoutY="338.0" prefHeight="21.0" prefWidth="156.0" text="Activity Name" textFill="WHITE">
+      <Rectangle fx:id="rectHabit" arcHeight="50.0" arcWidth="50.0" fill="#0000004d" height="101.0" layoutX="418.0" layoutY="318.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
+      <Label fx:id="lblActivityName" alignment="CENTER" layoutX="478.0" layoutY="340.0" prefHeight="21.0" prefWidth="156.0" text="Activity Name" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="lblTimeStart" alignment="CENTER" layoutX="195.0" layoutY="323.0" prefHeight="17.0" prefWidth="156.0" text="8:00AM" textFill="WHITE" />
-      <Label fx:id="lblTimeAmount" layoutX="194.0" layoutY="365.0" prefHeight="17.0" prefWidth="96.0" text="TimeAmount" textFill="WHITE" />
-      <Label fx:id="lblFrequency" alignment="CENTER_RIGHT" layoutX="283.0" layoutY="364.0" prefHeight="19.0" prefWidth="69.0" text="Frequency" textAlignment="RIGHT" textFill="WHITE" />
-      <Label fx:id="lblDifficulty" alignment="CENTER" layoutX="136.0" layoutY="386.0" prefHeight="21.0" prefWidth="222.0" text="Difficulty: " textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lblTimeStart" alignment="CENTER" layoutX="478.0" layoutY="325.0" prefHeight="17.0" prefWidth="156.0" text="8:00AM" textFill="WHITE" />
+      <Label fx:id="lblTimeAmount" layoutX="477.0" layoutY="367.0" prefHeight="17.0" prefWidth="96.0" text="TimeAmount" textFill="WHITE" />
+      <Label fx:id="lblFrequency" alignment="CENTER_RIGHT" layoutX="566.0" layoutY="366.0" prefHeight="19.0" prefWidth="69.0" text="Frequency" textAlignment="RIGHT" textFill="WHITE" />
+      <Label fx:id="lblDifficulty" alignment="CENTER" layoutX="419.0" layoutY="388.0" prefHeight="21.0" prefWidth="222.0" text="Difficulty: " textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgIcon" fitHeight="53.0" fitWidth="41.0" layoutX="140.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgIcon" fitHeight="53.0" fitWidth="41.0" layoutX="423.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../homeImages/list-check%20(1).png" />
          </image>
       </ImageView>
+      <Label fx:id="lblErrorSort" alignment="CENTER" layoutX="398.0" layoutY="600.0" prefHeight="34.0" prefWidth="261.0" text="Error Message" textFill="WHITE" wrapText="true" />
    </children>
 </AnchorPane>
