@@ -19,9 +19,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class AllHabitsController implements Initializable {
@@ -48,6 +50,27 @@ public class AllHabitsController implements Initializable {
     @FXML
     private TextField txtSearchHabit;
 	
+    @FXML
+    private ImageView imgIcon;
+
+    @FXML
+    private Label lblActivityName;
+
+    @FXML
+    private Label lblDifficulty;
+
+    @FXML
+    private Label lblFrequency;
+
+    @FXML
+    private Label lblTimeAmount;
+
+    @FXML
+    private Label lblTimeStart;
+
+    @FXML
+    private Rectangle rectHabit;
+    
 	
 	@FXML
 	private Stage stage;
@@ -56,7 +79,42 @@ public class AllHabitsController implements Initializable {
 	
 	
 	
-	
+	public void searchActivity() throws FileNotFoundException, IOException {
+		String activitySearch = txtSearchHabit.getText().toUpperCase();
+		Habits habitFound = null;
+		Habits habit = new Habits();
+		for (Habits habitToCheck : habit.habits) {
+			if (habitToCheck.getActivity().toUpperCase().equals(activitySearch)) {
+				habitFound = habitToCheck;
+			}
+		}
+		if (habitFound == null) {
+			lblError.setText("No habit found.");
+			lblError.setVisible(true);
+			imgIcon.setVisible(false);
+			lblActivityName.setVisible(false);
+			lblDifficulty.setVisible(false);
+			lblFrequency.setVisible(false);
+			lblTimeAmount.setVisible(false);
+			lblTimeStart.setVisible(false);
+			rectHabit.setVisible(false);
+		}
+		else {
+			lblError.setVisible(false);
+			imgIcon.setVisible(true);
+			lblActivityName.setVisible(true);
+			lblActivityName.setText(habitFound.getActivity());
+			lblDifficulty.setVisible(true);
+			lblDifficulty.setText("Difficulty: " + habitFound.getDifficulty());
+			lblFrequency.setVisible(true);
+			lblFrequency.setText(habitFound.getFrequency());
+			lblTimeAmount.setVisible(true);
+			lblTimeAmount.setText(habitFound.getTimeLength());
+			lblTimeStart.setVisible(true);
+			lblTimeStart.setText(habitFound.getTimeStart());
+			rectHabit.setVisible(true);
+		}
+	}
 	
 	public void sortBy() throws FileNotFoundException, IOException {
 		boolean reversed = false;
@@ -162,7 +220,13 @@ public class AllHabitsController implements Initializable {
 			choiceBoxSortType.getItems().addAll(sortType);
 			lblError.setVisible(false);
 			
-			
+			imgIcon.setVisible(false);
+			lblActivityName.setVisible(false);
+			lblDifficulty.setVisible(false);
+			lblFrequency.setVisible(false);
+			lblTimeAmount.setVisible(false);
+			lblTimeStart.setVisible(false);
+			rectHabit.setVisible(false);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
