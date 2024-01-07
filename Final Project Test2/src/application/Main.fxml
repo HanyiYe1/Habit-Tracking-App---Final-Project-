@@ -87,12 +87,6 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="80.0" layoutX="166.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" width="79.0" />
-      <ImageView fitHeight="53.0" fitWidth="55.0" layoutX="179.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../homeImages/image%204.png" />
-         </image>
-      </ImageView>
       <Circle fill="#00000080" layoutX="148.0" layoutY="258.0" radius="58.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" />
       <Label fx:id="lblPercentComplete" alignment="CENTER" layoutX="95.0" layoutY="221.0" prefHeight="53.0" prefWidth="105.0" text="20%" textFill="WHITE">
          <font>
@@ -220,5 +214,6 @@
          </image>
       </ImageView>
       <HBox fx:id="hBoxMilestones2" alignment="CENTER_LEFT" layoutX="589.0" layoutY="250.0" prefHeight="183.0" prefWidth="396.0" style="-fx-spacing: 15;" />
+      <Button fx:id="btnExplore" layoutX="166.0" layoutY="404.0" mnemonicParsing="false" onAction="#switchToSceneExplorePlanets" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: white; -fx-background-radius: 30;" />
    </children>
 </AnchorPane>

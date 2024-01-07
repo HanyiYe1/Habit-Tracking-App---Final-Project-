@@ -32,7 +32,10 @@
 	-fx-font-family: "Black Han Sans";
 	-fx-color: white;
 }
-
+#lblDiscovery {
+	-fx-font-family: "Black Han Sans";
+	-fx-color: white;
+}
 #lblError {
 	-fx-font-family: "Black Han Sans";
 }

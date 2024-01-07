@@ -132,6 +132,9 @@ public class MainController implements Initializable {
     @FXML
     private Rectangle AchievementRectangle6;
 	
+    @FXML
+    private Button btnExplore;
+    
 	@FXML
 	private Stage stage;
 	private Scene scene;
@@ -139,6 +142,7 @@ public class MainController implements Initializable {
 	private Parent root2;	
 	private Parent root3;
 	private Parent root4;
+	private Parent root5;
 	@FXML
 	private Button btnMoreHabits;
 	
@@ -157,6 +161,11 @@ public class MainController implements Initializable {
 		addSceneAllAchievement(e);
 	}
 	
+	public void switchToSceneExplorePlanets(ActionEvent e) throws IOException {
+		root5 = FXMLLoader.load(getClass().getResource("ExplorePlanets.fxml"));
+		addSceneExplorePlanets(e);
+	}
+
 	public void setComplete1(ActionEvent e) throws FileNotFoundException, IOException {
 		Habits habit = new Habits();
 		String completedHabit = habit.habits.get(0).toString();
@@ -193,7 +202,7 @@ public class MainController implements Initializable {
 			displayNoHabits();
 			setPercentageComplete();
 			setStreak();
-			
+			setUpExploreButton();
 			
 			if (habit.habits.size() >= 2) {
 				displayHabit1(habit.habits);
@@ -214,6 +223,11 @@ public class MainController implements Initializable {
 		}
 	}
 	
+	private void setUpExploreButton() {
+		Image img = new Image(getClass().getResourceAsStream("/homeImages/image 4.png"));
+        ImageView imgView = new ImageView(img);
+        btnExplore.setGraphic(imgView);
+	}
 	
 	private void setMilestones() throws FileNotFoundException, IOException {
 		ImageView[] imagesUndiscovered = {imgUndiscovered1, imgUndiscovered2, imgUndiscovered3, imgUndiscovered4, imgUndiscovered5, imgUndiscovered6};
@@ -552,6 +566,16 @@ public class MainController implements Initializable {
 	private void addSceneAllAchievement(ActionEvent event) {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root4);
+        String css = this.getClass().getResource("application.css").toExternalForm();
+        // Set the stylesheet after the scene creation
+        scene.getStylesheets().add(css);
+        stage.setScene(scene);
+        stage.show();
+	}
+	
+	private void addSceneExplorePlanets(ActionEvent event) {
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root5);
         String css = this.getClass().getResource("application.css").toExternalForm();
         // Set the stylesheet after the scene creation
         scene.getStylesheets().add(css);

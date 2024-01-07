@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.Media?>
+<?import javafx.scene.media.MediaPlayer?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="601.0" prefWidth="1074.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="application.ExplorePlanetsController">
+   <children>
+      <MediaView fx:id="cutscene" fitHeight="604.0" fitWidth="1074.0">
+         <mediaPlayer>
+            <MediaPlayer>
+               <media>
+                  <Media>
+                     <source>
+                        <URL value="@../ExploringPlanets/ExploringAnimation.mp4" />
+                     </source>
+                  </Media>
+               </media>
+            </MediaPlayer>
+         </mediaPlayer>
+      </MediaView>
+      <Rectangle fx:id="blackout" arcHeight="5.0" arcWidth="5.0" height="604.0" layoutX="4.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1067.0" />
+      <ImageView fx:id="imgBackground" fitHeight="604.0" fitWidth="1074.0" pickOnBounds="true">
+         <image>
+            <Image url="@../achievementImages/achievementBackground2.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblPlanetName" alignment="CENTER" layoutY="441.0" prefHeight="103.0" prefWidth="653.0" text="Tranquilterra" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="60.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgPlanet" fitHeight="390.0" fitWidth="414.0" layoutX="61.0" layoutY="91.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/TranquilPlanet.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblDiscovery" layoutX="250.0" layoutY="27.0" text="New Planet Discovered!" textFill="WHITE">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnContinue" layoutX="593.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToSceneMain" prefHeight="65.0" prefWidth="401.0" style="-fx-background-color: white; -fx-background-radius: 50; -fx-font-size: 30;" text="Continue">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblDescription" alignment="TOP_LEFT" layoutX="532.0" layoutY="208.0" prefHeight="231.0" prefWidth="523.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 0; -fx-label-padding: 5;" text="Description" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSkipAnimation" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" onAction="#blackoutScreen" style="-fx-background-color: rgba(0,0,0,0);" text="Skip Animation" textFill="WHITE" />
+   </children>
+</AnchorPane>
