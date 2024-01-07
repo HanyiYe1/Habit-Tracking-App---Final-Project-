@@ -6,14 +6,16 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="backgroundPane" prefHeight="565.0" prefWidth="1032.0" style="-fx-background-color: linear-gradient(#455D8D, #0B0E1E);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Rectangle fx:id="welcomeUserRectangle" arcHeight="50.0" arcWidth="25.0" fill="#5477bb" height="27.0" layoutX="23.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="203.0" />
-      <Label fx:id="lblConsole" layoutX="34.0" layoutY="26.0" prefHeight="14.0" prefWidth="163.0" style="-fx-font-family: &quot;Bruno Ace&quot;;" text="Welcome User" textFill="WHITE">
+      <HBox fx:id="hBoxMilestones1" alignment="CENTER_LEFT" layoutX="589.0" layoutY="67.0" prefHeight="183.0" prefWidth="396.0" style="-fx-spacing: 15;" />
+      <Rectangle fx:id="welcomeUserRectangle" arcHeight="50.0" arcWidth="25.0" fill="#5477bb" height="27.0" layoutX="23.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="190.0" />
+      <Label fx:id="lblConsole" layoutX="34.0" layoutY="26.0" prefHeight="16.0" prefWidth="210.0" style="-fx-font-family: &quot;Bruno Ace&quot;;" text="Welcome to CelestiGoals" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -37,9 +39,6 @@
          </font>
       </Label>
       <Separator layoutX="589.0" layoutY="52.0" prefWidth="396.0" style="-fx-background-color: white; -fx-pref-height: 2;" />
-      <Rectangle fx:id="AchievementRectangle" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="589.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
-      <Rectangle fx:id="AchievementRectangle1" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="726.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
-      <Rectangle fx:id="AchievementRectangle3" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="863.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
       <Rectangle fx:id="AchievementRectangle4" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="589.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
       <Rectangle fx:id="AchievementRectangle5" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="726.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
       <Rectangle fx:id="AchievementRectangle6" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="863.0" layoutY="258.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
@@ -105,7 +104,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btnViewAll" layoutX="897.0" layoutY="17.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: #151f3a; -fx-background-radius: 50;" text="View All" textFill="WHITE">
+      <Button fx:id="btnViewAll" layoutX="897.0" layoutY="17.0" mnemonicParsing="false" onAction="#switchToSceneAllAchievements" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: #151f3a; -fx-background-radius: 50;" text="View All" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
@@ -116,7 +115,7 @@
          </font>
       </Button>
       <Rectangle fx:id="rectHabit1" arcHeight="50.0" arcWidth="50.0" fill="#00000043" height="101.0" layoutX="313.0" layoutY="196.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
-      <Button fx:id="btnMoreHabits" layoutX="385.0" layoutY="407.0" mnemonicParsing="false" onAction="#switchToSceneAllHabits" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: rgba(0,0,0,0);" text="View All" textFill="WHITE">
+      <Button fx:id="btnMoreHabits" layoutX="385.0" layoutY="407.0" mnemonicParsing="false" onAction="#switchToSceneAllHabits" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: rgba(0,0,0,0); -fx-background-radius: 50;" text="View All" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -182,10 +181,44 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lblDay" alignment="CENTER" layoutX="379.0" layoutY="110.0" prefHeight="41.0" prefWidth="140.0" text="Monday" textFill="WHITE">
+      <Label fx:id="lblDay" alignment="CENTER" layoutX="364.0" layoutY="110.0" prefHeight="41.0" prefWidth="171.0" text="Monday" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <ImageView fx:id="imgUndiscovered4" fitHeight="173.0" fitWidth="122.0" layoutX="589.0" layoutY="258.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/undiscoveredPlanetImage.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgUndiscovered5" fitHeight="173.0" fitWidth="122.0" layoutX="726.0" layoutY="258.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/undiscoveredPlanetImage.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgUndiscovered6" fitHeight="173.0" fitWidth="122.0" layoutX="863.0" layoutY="258.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/undiscoveredPlanetImage.PNG" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="AchievementRectangle1" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="589.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <ImageView fx:id="imgUndiscovered1" fitHeight="173.0" fitWidth="122.0" layoutX="589.0" layoutY="69.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/undiscoveredPlanetImage.PNG" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="AchievementRectangle2" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="727.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <ImageView fx:id="imgUndiscovered2" fitHeight="173.0" fitWidth="122.0" layoutX="726.0" layoutY="68.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/undiscoveredPlanetImage.PNG" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="AchievementRectangle3" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" layoutX="863.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <ImageView fx:id="imgUndiscovered3" fitHeight="173.0" fitWidth="122.0" layoutX="863.0" layoutY="68.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/undiscoveredPlanetImage.PNG" />
+         </image>
+      </ImageView>
+      <HBox fx:id="hBoxMilestones2" alignment="CENTER_LEFT" layoutX="589.0" layoutY="250.0" prefHeight="183.0" prefWidth="396.0" style="-fx-spacing: 15;" />
    </children>
 </AnchorPane>

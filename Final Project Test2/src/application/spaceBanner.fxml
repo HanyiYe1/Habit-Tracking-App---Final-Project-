@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="166.0" prefWidth="115.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.spaceBannerController">
+   <children>
+      <Rectangle fx:id="AchievementRectangle" arcHeight="50.0" arcWidth="50.0" fill="DODGERBLUE" height="173.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(#202D4E, #12192E); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 4, 4);" width="122.0" />
+      <ImageView fx:id="imgBackground" fitHeight="173.0" fitWidth="122.0" opacity="0.8" pickOnBounds="true">
+         <image>
+            <Image url="@../achievementImages/achievementBackground2.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblPlanetName" alignment="CENTER" layoutY="134.0" prefHeight="17.0" prefWidth="122.0" text="Tranquilterra" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <ImageView fx:id="imgPlanet" fitHeight="107.0" fitWidth="122.0" layoutX="1.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../achievementImages/TranquilPlanet.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

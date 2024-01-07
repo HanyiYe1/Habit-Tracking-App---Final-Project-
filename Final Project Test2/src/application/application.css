@@ -1,5 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bruno+Ace&family=Tektur&display=swap');
 
 #welcomeUserRectangle{
 	-fx-arc-height: 50;
@@ -25,6 +25,10 @@
 	-fx-color: white;
 }
 #lblAllHabits {
+	-fx-font-family: "Black Han Sans";
+	-fx-color: white;
+}
+#lblAllAchievements {
 	-fx-font-family: "Black Han Sans";
 	-fx-color: white;
 }
@@ -61,7 +65,9 @@
 	-fx-font-family: "Black Han Sans";
 	-fx-font-size: 25;
 }
-
+#lblPlanetName {
+	-fx-font-family: "Tektur";
+}
 #backgroundPane {
 	-fx-background-color: linear-gradient(#455D8D, #0B0E1E);
 }
@@ -131,6 +137,10 @@
 }
 #btnClearHowLong {
 	-fx-font-family: "Black Han Sans";
+}
+
+.scroll-pane > .viewport {  
+   -fx-background-color: transparent;
 }
 
 

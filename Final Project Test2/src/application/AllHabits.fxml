@@ -20,12 +20,12 @@
             <Image url="@../allHabitsImages/Leonardo_Diffusion_XL_space_themed_background_for_website_dark_3.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="542.0" fitWidth="679.0" layoutY="-140.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="542.0" fitWidth="704.0" layoutY="-140.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../allHabitsImages/image-removebg-preview%20(59).png" />
          </image>
       </ImageView>
-      <Button fx:id="btnBackToHome" layoutX="430.0" layoutY="703.0" mnemonicParsing="false" onAction="#switchToSceneMain" prefHeight="34.0" prefWidth="214.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Back to Home" />
+      <Button fx:id="btnBackToHome" layoutX="421.0" layoutY="703.0" mnemonicParsing="false" onAction="#switchToSceneMain" prefHeight="34.0" prefWidth="214.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Back to Home" />
       <ScrollPane fx:id="scrollPaneHabits" layoutX="14.0" layoutY="118.0" prefHeight="648.0" prefWidth="339.0">
         <content>
           <AnchorPane>
