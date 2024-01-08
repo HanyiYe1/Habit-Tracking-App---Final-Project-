@@ -7,12 +7,40 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Milestone {
 	String milestonePlanetImg;
+	static boolean exploredToday = false;
 	
-	
+	public static boolean isExploredToday() {
+		return exploredToday;
+	}
+
+	public void setExploredToday() throws FileNotFoundException, IOException {
+		Streak streak = new Streak();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
+		if (streak.dates.size() >= 1) {
+			String date = streak.dates.get(0);
+			LocalDate otherDate = LocalDate.parse(date, formatter);
+	        // Get today's date
+	        LocalDate today = LocalDate.now();
+	        
+	        if (!today.equals(otherDate)) {
+	        	Milestone.exploredToday = false;
+	        }
+	        else {
+	        	Milestone.exploredToday = true;
+	        }
+		}
+		else {
+			Milestone.exploredToday = false;
+		}
+	}
+
 	public String getMilestonePlanetImg() {
 		return milestonePlanetImg;
 	}

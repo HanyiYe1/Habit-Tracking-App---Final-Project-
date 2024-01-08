@@ -215,5 +215,6 @@
       </ImageView>
       <HBox fx:id="hBoxMilestones2" alignment="CENTER_LEFT" layoutX="589.0" layoutY="250.0" prefHeight="183.0" prefWidth="396.0" style="-fx-spacing: 15;" />
       <Button fx:id="btnExplore" layoutX="166.0" layoutY="404.0" mnemonicParsing="false" onAction="#switchToSceneExplorePlanets" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: white; -fx-background-radius: 30;" />
+      <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="484.0" prefHeight="41.0" prefWidth="116.0" text="Finish all habits to explore!" textFill="WHITE" wrapText="true" />
    </children>
 </AnchorPane>

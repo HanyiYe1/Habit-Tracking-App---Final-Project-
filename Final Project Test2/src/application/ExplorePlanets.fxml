@@ -12,8 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="601.0" prefWidth="1074.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="application.ExplorePlanetsController">
+<AnchorPane prefHeight="601.0" prefWidth="1074.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ExplorePlanetsController">
    <children>
       <MediaView fx:id="cutscene" fitHeight="604.0" fitWidth="1074.0">
          <mediaPlayer>
@@ -34,7 +33,7 @@
             <Image url="@../achievementImages/achievementBackground2.PNG" />
          </image>
       </ImageView>
-      <Label fx:id="lblPlanetName" alignment="CENTER" layoutY="441.0" prefHeight="103.0" prefWidth="653.0" text="Tranquilterra" textFill="WHITE">
+      <Label fx:id="lblPlanetName" alignment="CENTER" layoutY="441.0" prefHeight="103.0" prefWidth="554.0" text="Tranquilterra" textFill="WHITE">
          <font>
             <Font name="System Bold" size="60.0" />
          </font>

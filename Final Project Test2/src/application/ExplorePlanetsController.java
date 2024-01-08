@@ -88,14 +88,14 @@ public class ExplorePlanetsController implements Initializable {
 			media = new Media(file.toURI().toString());
 			mediaPlayer = new MediaPlayer(media);
 			cutscene.setMediaPlayer(mediaPlayer);
-			mediaPlayer.setVolume(0.5);
+			mediaPlayer.setVolume(0.25);
 			mediaPlayer.play();
 			
 			 // Create a scheduled executor service with a single thread
 	        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 	        
 	        // Define the delay in seconds
-	        int delayInSeconds = 25;
+	        int delayInSeconds = 26;
 
 	        // Schedule a task to run after the specified delay
 	        executorService.schedule(() -> {

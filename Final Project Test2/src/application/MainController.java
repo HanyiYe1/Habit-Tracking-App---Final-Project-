@@ -99,6 +99,8 @@ public class MainController implements Initializable {
 	private Label lblStreakNumber;
 	@FXML
 	private Label lblDay;
+	@FXML
+	private Label lblMessage;
 	
 	@FXML 
 	private ImageView imgSpace;
@@ -146,6 +148,9 @@ public class MainController implements Initializable {
 	@FXML
 	private Button btnMoreHabits;
 	
+	static boolean hundredPercentComplete = false;
+	
+
 	public void switchToSceneAllHabits(ActionEvent e) throws IOException {
 		root3 = FXMLLoader.load(getClass().getResource("AllHabits.fxml"));
 		addSceneAllHabit(e);
@@ -162,8 +167,22 @@ public class MainController implements Initializable {
 	}
 	
 	public void switchToSceneExplorePlanets(ActionEvent e) throws IOException {
-		root5 = FXMLLoader.load(getClass().getResource("ExplorePlanets.fxml"));
-		addSceneExplorePlanets(e);
+		if (Milestone.exploredToday == false && hundredPercentComplete == true) {
+			Milestone.exploredToday = true;
+			root5 = FXMLLoader.load(getClass().getResource("ExplorePlanets.fxml"));
+			addSceneExplorePlanets(e);
+		}
+		else {
+			if (hundredPercentComplete == false) {
+				lblMessage.setVisible(true);
+			}
+			else {
+				lblMessage.setVisible(true);
+				lblMessage.setText("You have already explored today!");
+			}
+			
+		}
+		
 	}
 
 	public void setComplete1(ActionEvent e) throws FileNotFoundException, IOException {
@@ -193,9 +212,11 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			lblMessage.setVisible(false);
 			clipSpaceImage();
 			Habits habit = new Habits();
-			
+			Milestone milestone = new Milestone();
+			milestone.setExploredToday();
 			//habit.resetHabits();
 			setMilestones();
 			setDate();
@@ -305,6 +326,7 @@ public class MainController implements Initializable {
 	
 	private void setPercentageComplete() throws FileNotFoundException, IOException {
 		// TODO Auto-generated method stub
+		hundredPercentComplete = false;
 		Habits habit = new Habits();
 		String[] checker;
 		double amountCompleted = 0;
@@ -328,6 +350,7 @@ public class MainController implements Initializable {
 		}
 		
 		if (percent == 100) {
+			hundredPercentComplete = true;
 			Streak streak = new Streak();
 			if (streak.dates.contains(lblDate.getText())) {
 				//Do nothing since the streak has been added.
@@ -592,6 +615,7 @@ public class MainController implements Initializable {
         stage.setScene(scene);
         stage.show();
 	}
+	
 	private void addSceneAllHabit(ActionEvent event) {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root3);

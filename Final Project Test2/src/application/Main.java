@@ -47,13 +47,14 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 			
 			Habits habitClass = new Habits();
-			
+			Milestone milestoneClass = new Milestone();
 			ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 			scheduler.scheduleAtFixedRate(new Runnable() {
 	            @Override
 	            public void run() {
 	                try {
 	                	habitClass.resetHabits();
+	                	milestoneClass.setExploredToday();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
