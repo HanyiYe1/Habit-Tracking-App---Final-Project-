@@ -22,9 +22,13 @@ public class Milestone {
 	public void setExploredToday() throws FileNotFoundException, IOException {
 		Streak streak = new Streak();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-
-		if (streak.dates.size() >= 1) {
-			String date = streak.dates.get(0);
+		ArrayList<String> reversedDates = new ArrayList<String>();
+		for (int i = streak.dates.size() - 1; i >= 0; i--) {
+            // Append the elements in reverse order
+			reversedDates.add(streak.dates.get(i));
+        }
+		if (reversedDates.size() >= 1) {
+			String date = reversedDates.get(0);
 			LocalDate otherDate = LocalDate.parse(date, formatter);
 	        // Get today's date
 	        LocalDate today = LocalDate.now();

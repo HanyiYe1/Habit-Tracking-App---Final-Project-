@@ -92,6 +92,14 @@
 }
 .choice-box > .label { -fx-text-fill: white; -fx-font-family: "Black Han Sans";}
 
+#choiceBoxSortType > .label {
+	-fx-text-fill: black;
+}
+
+#choiceBoxSortOrder > .label {
+	-fx-text-fill: black;
+}
+
 #txtHabitName {
 	-fx-background-color: rgba(0,0,0,0.2);
 	-fx-font-family: "Black Han Sans";

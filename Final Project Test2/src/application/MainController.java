@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,6 +17,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.prefs.Preferences;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -213,18 +216,18 @@ public class MainController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			lblMessage.setVisible(false);
+			
 			clipSpaceImage();
-			Habits habit = new Habits();
-			Milestone milestone = new Milestone();
-			milestone.setExploredToday();
-			//habit.resetHabits();
+			runOnceDay();
 			setMilestones();
 			setDate();
 			displayNoHabits();
 			setPercentageComplete();
 			setStreak();
 			setUpExploreButton();
-			
+			Habits habit = new Habits();
+			Milestone milestone = new Milestone();
+			milestone.setExploredToday();
 			if (habit.habits.size() >= 2) {
 				displayHabit1(habit.habits);
 				displayHabit2(habit.habits);
@@ -244,6 +247,46 @@ public class MainController implements Initializable {
 		}
 	}
 	
+	private void runOnceDay() throws FileNotFoundException, IOException {
+		// TODO Auto-generated method stub
+		if (!hasCodeBeenExecutedToday()) {
+            // Code to be executed once a day
+            System.out.println("Code executed once a day!");
+            Habits habit = new Habits();
+			Milestone milestone = new Milestone();
+            habit.resetHabits();
+        	milestone.setExploredToday();
+            // Save the current timestamp to indicate that the code has been executed today
+            saveExecutionTimestamp();
+        } else {
+            System.out.println("Code already executed today. Skipping...");
+        }
+	}
+	private static final String LAST_EXECUTION_KEY = "last_execution";
+    private static final String NODE_PATH = "/src/application/MainController.java";
+
+	private void saveExecutionTimestamp() {
+		Preferences prefs = Preferences.userRoot().node(NODE_PATH);
+
+        // Save the current timestamp to preferences
+        long currentTimestamp = LocalDate.now().toEpochDay();
+        prefs.putLong(LAST_EXECUTION_KEY, currentTimestamp);
+	}
+
+	private boolean hasCodeBeenExecutedToday() {
+		Preferences prefs = Preferences.userRoot().node(NODE_PATH);
+
+        // Read the last execution timestamp from preferences
+        long lastExecutionTimestamp = prefs.getLong(LAST_EXECUTION_KEY, -1);
+
+        // Check if the last execution timestamp is equal to today's date
+        LocalDate lastExecutionDate = lastExecutionTimestamp > 0 ?
+                LocalDate.ofEpochDay(lastExecutionTimestamp) : null;
+
+        return lastExecutionDate != null && lastExecutionDate.isEqual(LocalDate.now());
+	    
+	}
+
 	private void setUpExploreButton() {
 		Image img = new Image(getClass().getResourceAsStream("/homeImages/image 4.png"));
         ImageView imgView = new ImageView(img);
@@ -624,5 +667,19 @@ public class MainController implements Initializable {
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
+	}
+	
+	private long calculateDelayUntilMidnight() {
+		// TODO Auto-generated method stub
+		LocalTime now = LocalTime.now();
+        LocalTime midnight = LocalTime.MIDNIGHT;
+        long initialDelay = midnight.toSecondOfDay() - now.toSecondOfDay();
+
+        // If the current time is already past midnight, add 24 hours to the initial delay
+        if (initialDelay < 0) {
+            initialDelay += TimeUnit.DAYS.toSeconds(1);
+        }
+
+        return initialDelay;
 	}
 }

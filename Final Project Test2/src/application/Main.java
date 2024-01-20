@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -46,35 +47,15 @@ public class Main extends Application {
 			primaryStage.show();
 			primaryStage.setResizable(false);
 			
-			Habits habitClass = new Habits();
-			Milestone milestoneClass = new Milestone();
-			ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-			scheduler.scheduleAtFixedRate(new Runnable() {
-	            @Override
-	            public void run() {
-	                try {
-	                	habitClass.resetHabits();
-	                	milestoneClass.setExploredToday();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-	            }
-	        }, 0, 1, TimeUnit.DAYS);
-	        // Shutdown the scheduler when the program exits
-	        // Note: In a real application, you may want to handle shutdown gracefully
-	        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-	            @Override
-	            public void run() {
-	                scheduler.shutdown();
-	            }
-	        }));
+			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
+	
+
 	public static void main(String[] args) {
 		launch(args);
 		
